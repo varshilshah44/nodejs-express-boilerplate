@@ -7,6 +7,7 @@ import xss from 'xss-clean'
 import cookieParser from 'cookie-parser'
 import compression from 'compression'
 import cors from 'cors'
+import hpp from 'hpp'
 import createHttpError from 'http-errors'
 import config from '#config/config.js'
 import router from '#components/index.js'
@@ -31,6 +32,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+app.use(hpp())
 app.use(config.apiVersionUrl, router)
 app.use(mongoSanitize())
 app.use(xss())
