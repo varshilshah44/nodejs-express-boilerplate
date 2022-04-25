@@ -1,15 +1,77 @@
 {
-  "name": "Node-js-express",
+  "name": "node-js-express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/api/bin/www",
+    "dev": "nodemon ./src/api/bin/www"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoluLab/spooky-backend.git"
+  },
+  "engines": {
+    "node": "14.17.5"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoluLab/spooky-backend/issues"
+  },
+  "homepage": "https://github.com/SoluLab/spooky-backend#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "app-root-path": "^3.0.0",
+    "axios": "^0.22.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.3.0",
+    "helmet": "^4.6.0",
+    "http-errors": "^2.0.0",
+    "mongoose": "^5.12.5",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix src/",
+      "pretty-quick — staged"
+    ]
+  },
+  "imports": {
+    "#root/*": "./src/api/*",
+    "#config/*": "./src/api/config/*",
+    "#components/*": "./src/api/components/*",
+    "#connection/*": "./src/api/connection/*",
+    "#middlewares/*": "./src/api/middlewares/*",
+    "#helpers/*": "./src/api/helpers/*",
+    "#utils/*": "./src/api/utils/*",
+    "#validations/*": "./src/api/validations/*"
   }
 }

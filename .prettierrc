@@ -1,0 +1,24 @@
+{
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"printWidth": 180,
+	"semi": false,
+	"singleQuote": true,
+	"tabWidth": 4,
+	"useTabs": true,
+	"trailingComma" : "none",
+	"overrides": [
+		{
+			"files": "*.sol",
+			"options": {
+				"printWidth": 150,
+				"tabWidth": 4,
+				"useTabs": false,
+				"singleQuote": false,
+				"bracketSpacing": false,
+				"explicitTypes": "always"
+			}
+		}
+	]
+}
